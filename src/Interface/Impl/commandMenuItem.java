@@ -1,9 +1,6 @@
 package Interface.Impl;
 
-import Interface.GameBoardable;
-import Interface.GameLogical;
-import Interface.GreedGameLogic;
-import Interface.Viewable;
+import Interface.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +8,11 @@ import java.util.Scanner;
 
 public class commandMenuItem extends MenuItem{
 
-    public commandMenuItem(String description) {
+    private Player player;
+
+    public commandMenuItem(String description, Player player) {
         super(description);
+        this.player = player;
     }
 
     @Override
@@ -27,8 +27,7 @@ public class commandMenuItem extends MenuItem{
             greedGameLogic = (GreedGameLogic) gl;
         }
 
-        Scanner input = new Scanner(System.in);
-        Integer direction = input.nextInt();
+        int direction = this.player.chooseDirection();
 
         if(direction == 0){
             return false;

@@ -1,8 +1,5 @@
-import Interface.GameBoardable;
-import Interface.GreedGameLogic;
+import Interface.*;
 import Interface.Impl.*;
-import Interface.Menuable;
-import Interface.RunnableGame;
 
 import java.util.List;
 
@@ -11,10 +8,12 @@ public class GreedGame implements RunnableGame {
     private GreedGameLogic game;
     private Menuable menu;
     private boolean isGamemode;
+    private Player player;
 
     public GreedGame() {
+        this.player = new HumanPlayer();
         this.board = new GameBoardImpl(20, 30);
-        this.game = new GameLogicalImpl(20/2, 30/2, new commandMenuItem("Move"));
+        this.game = new GameLogicalImpl(20/2, 30/2, new commandMenuItem("Move", this.player));
         List<MenuItem> menuItems = List.of(
                 new startMenuItem("Start"),
                 new exitMenuItem("Exit")
