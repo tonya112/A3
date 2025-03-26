@@ -4,7 +4,7 @@ import Interface.GameBoardable;
 
 import java.util.Random;
 
-public class GameBoardImpl implements GameBoardable {
+public class GameBoardImpl extends GameBoard {
     private final Integer xSize;
     private final Integer ySize;
     private char [][] board;

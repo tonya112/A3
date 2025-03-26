@@ -6,7 +6,7 @@ import Interface.Viewable;
 
 import java.util.*;
 
-public class GameLogicalImpl implements GreedGameLogic {
+public class GameLogicalImpl extends GameLogic implements GreedGameLogic{
 
     private int xPos;
     private int yPos;

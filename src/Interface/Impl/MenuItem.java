@@ -16,9 +16,5 @@ public abstract class MenuItem implements Selectable {
         return description;
     }
 
-    public void setDescription(String description){
-        this.description = description;
-    }
-
 
 }
